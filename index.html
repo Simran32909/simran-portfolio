@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f17" />
+    <title>Simran Sandral — Portfolio</title>
+    <meta name="description" content="Portfolio of Simran Sandral showcasing projects, skills, and experience." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true"><div class="progress-bar"></div></div>
+    <div class="bg">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
+      <div class="bg-noise" aria-hidden="true"></div>
+    </div>
+
+    <header class="site-header" role="banner">
+      <a class="brand" href="#home" aria-label="Go to top">
+        <img src="assets/images/animated-logo.gif" alt="Animated Logo" class="brand-mark" aria-hidden="true">
+        <span class="brand-name">Simran Sandral</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Primary">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#contact" class="nav-link">Contact</a>
+        <a href="Resume/Simran_Sandral_Resume.pdf" class="button button-ghost" target="_blank" rel="noopener">Resume</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Open Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <div class="menu-overlay" aria-hidden="true"></div>
+
+    <main id="home" class="main">
+      <section class="hero" aria-label="Intro">
+        <div class="hero-inner">
+          <p class="eyebrow" data-animate>Software & Machine Learning Enthusiast</p>
+          <h1 class="hero-title gradient" data-animate>
+            I build robust, intelligent systems.
+          </h1>
+          <p class="hero-subtitle" data-animate>
+            My work spans from architecting scalable cloud platforms to fine-tuning and deploying custom language models for complex tasks.
+          </p>
+          <div class="cta" data-animate>
+            <a class="button" href="#projects">View Projects</a>
+            <a class="button button-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+        <div class="hero-parallax" aria-hidden="true">
+          <div class="parallax parallax-1"></div>
+          <div class="parallax parallax-2"></div>
+          <div class="parallax parallax-3"></div>
+        </div>
+      </section>
+
+      <section id="about" class="section about" aria-label="About">
+        <div class="about-inner">
+          <div class="about-card" data-animate>
+            <h2 class="section-title">About Me</h2>
+            <p class="about-blurb">
+              I’m Simran, a Software & Machine Learning Enthusiast focused on building clean, reliable systems and practical AI. I enjoy designing robust front‑ends, back‑ends, fine‑tuning models and building efficient AI models. Currently, I am a Research Intern at CVIT, IIIT‑Hyderabad, where I develop deep learning solutions for recognizing historical scripts.
+            </p>
+            <div class="about-actions">
+              <a class="button" href="#projects">View Projects</a>
+              <a class="button button-ghost" target="_blank" rel="noopener" href="Resume/Simran_Sandral_Resume.pdf">Download Resume</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section projects" aria-label="Projects">
+        <div class="section-head">
+          <h2 class="section-title" data-animate>Featured Projects</h2>
+          <p class="section-desc" data-animate>A selection of projects that showcase my skills in system design and machine learning.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card" data-animate>
+            <div class="project-body">
+              <h3>Cloud‑Based IDE Platform</h3>
+              <p>Engineered a full‑stack cloud IDE featuring a containerized execution environment with Docker for security and isolation. Built a scalable, multi‑tenant file system supporting real‑time code execution with strict resource limits.</p>
+              <ul class="tags">
+                <li>Python</li><li>Flask</li><li>Docker</li><li>JWT</li><li>SQLAlchemy</li><li>Git</li>
+              </ul>
+              <div class="actions">
+                <a href="https://github.com/Simran32909/CloudBasedIDE.git" class="button button-small" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate>
+            <div class="project-body">
+              <h3>ExplainIt‑Phi: End‑to‑End Fine‑Tuned LLM</h3>
+              <p>Engineered a specialized ELI5 model by fine‑tuning Microsoft’s 2.7B Phi‑2 with QLoRA, improving text simplicity by 20%. Deployed the model in GGUF format for llama.cpp compatibility, achieving 130+ community downloads.</p>
+              <ul class="tags">
+                <li>Phi‑2</li><li>PyTorch Lightning</li><li>Hydra</li><li>Transformers</li><li>QLoRA</li><li>llama.cpp</li><li>GGUF</li>
+              </ul>
+              <div class="actions" style="gap:10px; display:flex; flex-wrap:wrap;">
+                <a href="https://github.com/Simran32909/ExplainIt-Phi.git" class="button button-small" target="_blank" rel="noopener">Source Code</a>
+                <a href="https://huggingface.co/simraann/ExplainIt-Phi-GGUF" class="button button-small button-ghost" target="_blank" rel="noopener">Hugging Face</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate>
+            <div class="project-body">
+              <h3>CodeLLaMA</h3>
+              <p>Reduced model training time by 60% by fine‑tuning a LLaMA model for code generation using Low‑Rank Adaptation (LoRA). Developed a Flask‑based web interface to handle complex coding prompts.</p>
+              <ul class="tags">
+                <li>LLaMA</li><li>Transformers</li><li>PEFT</li><li>LoRA</li><li>Flask</li>
+              </ul>
+              <div class="actions">
+                <a href="https://github.com/Simran32909/CodeLLaMA.git" class="button button-small" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate>
+            <div class="project-body">
+              <h3>PerceptiText</h3>
+              <p>Text‑to‑image retrieval web app using OpenAI’s CLIP. Generates text embeddings, compares via cosine similarity with pre‑computed image embeddings, and returns top‑k matches with scores.</p>
+              <ul class="tags">
+                <li>CLIP</li><li>Retrieval</li><li>Cosine Similarity</li><li>NumPy</li>
+              </ul>
+              <div class="actions">
+                <a href="https://github.com/Simran32909/PerceptiText.git" class="button button-small" target="_blank" rel="noopener">Source Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills" aria-label="Tech Stack">
+        <div class="section-head">
+          <h2 class="section-title" data-animate>Tech Stack</h2>
+          <p class="section-desc" data-animate>Core technologies I work with across ML, web, and systems.</p>
+        </div>
+        <div class="skills-container" data-animate>
+          <div class="skills-category">
+            <h4>Languages</h4>
+            <div class="tech-grid">
+              <div class="tech-item">Python</div><div class="tech-item">JavaScript</div><div class="tech-item">C++</div><div class="tech-item">Java</div><div class="tech-item">TypeScript</div><div class="tech-item">Go</div><div class="tech-item">SQL</div><div class="tech-item">Bash</div>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h4>ML & AI</h4>
+            <div class="tech-grid">
+              <div class="tech-item">PyTorch</div><div class="tech-item">TensorFlow</div><div class="tech-item">Hugging Face</div><div class="tech-item">PyTorch Lightning</div><div class="tech-item">OpenCV</div><div class="tech-item">Scikit-learn</div><div class="tech-item">DeepSpeed</div><div class="tech-item">TensorRT</div>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h4>Web & Databases</h4>
+            <div class="tech-grid">
+              <div class="tech-item">Flask</div><div class="tech-item">Springboot</div><div class="tech-item">React</div><div class="tech-item">Next.js</div><div class="tech-item">Node.js</div><div class="tech-item">Express.js</div><div class="tech-item">REST APIs</div><div class="tech-item">SQL</div>
+            </div>
+          </div>
+          <div class="skills-category">
+            <h4>Tools & Libraries</h4>
+            <div class="tech-grid">
+              <div class="tech-item">Git</div><div class="tech-item">Docker</div><div class="tech-item">Linux</div><div class="tech-item">NumPy</div><div class="tech-item">Pandas</div><div class="tech-item">llama.cpp</div><div class="tech-item">Streamlit</div><div class="tech-item">Wandb</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <section id="contact" class="section contact" aria-label="Contact">
+        <div class="contact-inner">
+          <h2 class="section-title" data-animate>Let’s work together</h2>
+          <p class="section-desc" data-animate>
+            Open to new opportunities and collaborations. Feel free to reach out for a conversation.
+          </p>
+          <div class="contact-actions" data-animate>
+            <a class="button" href="mailto:simransandral05@gmail.com" aria-label="Send email">Email Me</a>
+            <div class="socials">
+              <a class="social" href="https://github.com/Simran32909" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.13-4.56-5 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.29.1-2.69 0 0 .84-.27 2.75 1.04a9.3 9.3 0 0 1 5 0c1.91-1.31 2.75-1.04 2.75-1.04.55 1.4.2 2.43.1 2.69.64.71 1.03 1.61 1.03 2.72 0 3.88-2.34 4.74-4.57 4.99.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
+              </a>
+              </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+      <p>© <span id="year"></span> <strong>Simran Sandral</strong>. Crafted with care.</p>
+    </footer>
+
+    <button class="scroll-top" aria-label="Scroll to top" title="Back to top">↑</button>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
