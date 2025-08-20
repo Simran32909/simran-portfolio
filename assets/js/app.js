@@ -27,11 +27,49 @@ class PortfolioApp {
     }
     this.initTechIcons();
     this.initTypewriter();
+    this.initViewCounter();
   }
 
   initYear() {
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+  }
+
+  /* Simple page view counter via CountAPI (approx unique per day per device) */
+  initViewCounter() {
+    const el = document.getElementById('view-count');
+    if (!el) return;
+
+    const KEY = 'simransandral-portfolio-views';
+    const NAMESPACE = 'simransandral.com';
+    const lastHitKey = 'viewCounter:lastHit';
+    const now = Date.now();
+    const oneDay = 24 * 60 * 60 * 1000;
+    const last = Number(localStorage.getItem(lastHitKey) || 0);
+
+    const updateEl = (n) => { el.textContent = new Intl.NumberFormat().format(n); };
+
+    const fetchCount = async (increment) => {
+      try {
+        const url = increment
+          ? `https://api.countapi.xyz/hit/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`
+          : `https://api.countapi.xyz/get/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(KEY)}`;
+        const res = await fetch(url, { cache: 'no-store' });
+        const data = await res.json();
+        if (typeof data.value === 'number') updateEl(data.value);
+      } catch (_) {
+        // ignore
+      }
+    };
+
+    // Increment at most once per day per device
+    const shouldIncrement = !last || now - last > oneDay;
+    if (shouldIncrement) {
+      localStorage.setItem(lastHitKey, String(now));
+      fetchCount(true);
+    } else {
+      fetchCount(false);
+    }
   }
 
   initNav() {
@@ -364,6 +402,27 @@ class PortfolioApp {
     let phraseIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
+    let reservedHeightPx = 0;
+
+    // Reserve height equal to tallest phrase to prevent layout shift
+    const measure = () => {
+      const tmp = document.createElement('span');
+      tmp.style.visibility = 'hidden';
+      tmp.style.position = 'absolute';
+      tmp.style.whiteSpace = 'normal';
+      tmp.style.font = getComputedStyle(el).font;
+      document.body.appendChild(tmp);
+      let maxH = 0;
+      for (const p of phrases) {
+        tmp.textContent = p;
+        maxH = Math.max(maxH, tmp.getBoundingClientRect().height);
+      }
+      tmp.remove();
+      reservedHeightPx = Math.ceil(maxH);
+      el.style.minHeight = reservedHeightPx + 'px';
+      el.style.display = 'inline-block';
+    };
+    measure();
 
     const tick = () => {
       const current = phrases[phraseIndex];

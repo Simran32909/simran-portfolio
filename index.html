@@ -83,8 +83,10 @@
           <div class="about-card" data-animate>
             <h2 class="section-title">About Me</h2>
             <p class="about-blurb">
-              I'm Simran. I spend half my time building clean, logical systems and the other half as a therapist for confused AI models. My specialties include crafting robust back-ends and convincing neural networks that, yes, that is in fact a cat. I'm currently a Research Intern at CVIT, IIIT-Hyderabad, where I'm on a heroic quest to teach computers how to read the world's most stubborn handwriting.            </p>
-            <div class="about-actions">
+              I'm Simran. I spend half my time building clean, logical systems and the other half as a therapist for confused AI models. My specialties include crafting robust back‑ends and convincing neural networks that, yes, that is in fact a cat. I'm currently a Research Intern at CVIT, IIIT‑Hyderabad, where I'm working on HTR for low‑resource scripts.
+            </p>
+            
+            <div class="about-actions about-cta">
               <a class="button" href="#projects">View Projects</a>
               <a class="button button-ghost" target="_blank" rel="noopener" href="Resume/Simran_Sandral_Resume.pdf">Download Resume</a>
             </div>
@@ -125,25 +127,14 @@
             </div>
           </article>
 
-          <article class="project-card" data-animate>
-            <div class="project-body">
-              <h3>CodeLLaMA</h3>
-              <p>Reduced model training time by 60% by fine‑tuning a LLaMA model for code generation using Low‑Rank Adaptation (LoRA). Developed a Flask‑based web interface to handle complex coding prompts.</p>
-              <ul class="tags">
-                <li>LLaMA</li><li>Transformers</li><li>PEFT</li><li>LoRA</li><li>Flask</li>
-              </ul>
-              <div class="actions">
-                <a href="https://github.com/Simran32909/CodeLLaMA.git" class="button button-small" target="_blank" rel="noopener">Source Code</a>
-              </div>
-            </div>
-          </article>
+          
 
           <article class="project-card" data-animate>
             <div class="project-body">
               <h3>PerceptiText</h3>
               <p>Text‑to‑image retrieval web app using OpenAI’s CLIP. Generates text embeddings, compares via cosine similarity with pre‑computed image embeddings, and returns top‑k matches with scores.</p>
               <ul class="tags">
-                <li>CLIP</li><li>Retrieval</li><li>Cosine Similarity</li><li>NumPy</li>
+                <li>CLIP</li><li>Flask</li><li>PyTorch</li><li>Streamlit</li><li>torchvision</li><li>Transformers</li><li>NumPy</li>
               </ul>
               <div class="actions">
                 <a href="https://github.com/Simran32909/PerceptiText.git" class="button button-small" target="_blank" rel="noopener">Source Code</a>
@@ -162,7 +153,7 @@
           <div class="skills-category">
             <h4>Languages</h4>
             <div class="tech-grid">
-              <div class="tech-item">Python</div><div class="tech-item">JavaScript</div><div class="tech-item">C++</div><div class="tech-item">Java</div><div class="tech-item">TypeScript</div><div class="tech-item">Go</div><div class="tech-item">SQL</div><div class="tech-item">Bash</div>
+              <div class="tech-item">Python</div><div class="tech-item">JavaScript</div><div class="tech-item">C++</div><div class="tech-item">Java</div><div class="tech-item">TypeScript</div><div class="tech-item">Go</div><div class="tech-item">SQL</div>
             </div>
           </div>
           <div class="skills-category">
@@ -200,6 +191,9 @@
               <a class="social" href="https://github.com/Simran32909" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.1-1.49-1.1-1.49-.9-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.13-4.56-5 0-1.11.39-2.01 1.03-2.72-.1-.26-.45-1.29.1-2.69 0 0 .84-.27 2.75 1.04a9.3 9.3 0 0 1 5 0c1.91-1.31 2.75-1.04 2.75-1.04.55 1.4.2 2.43.1 2.69.64.71 1.03 1.61 1.03 2.72 0 3.88-2.34 4.74-4.57 4.99.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" fill="currentColor"/></svg>
               </a>
+              <a class="social" href="https://huggingface.co/simraann/" aria-label="Hugging Face" title="Hugging Face" target="_blank" rel="noopener">
+                <img src="assets/images/image.png" alt="Hugging Face" width="22" height="22" style="border-radius: 4px;">
+              </a>
               </div>
           </div>
         </div>
@@ -207,7 +201,7 @@
     </main>
 
     <footer class="site-footer" role="contentinfo">
-      <p>© <span id="year"></span> <strong>Simran Sandral</strong>. Crafted with care.</p>
+      <p>© <span id="year"></span> <strong>Simran Sandral</strong>. Crafted with care · Views: <span id="view-count" title="Approximate unique views">—</span></p>
     </footer>
 
     <button class="scroll-top" aria-label="Scroll to top" title="Back to top">↑</button>
