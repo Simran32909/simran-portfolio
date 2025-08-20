@@ -26,6 +26,7 @@ class PortfolioApp {
       this.initTechHover();
     }
     this.initTechIcons();
+    this.initTypewriter();
   }
 
   initYear() {
@@ -229,7 +230,7 @@ class PortfolioApp {
       ['PyTorch', ['PyTorch','Torch','Lightning']],
       ['TensorFlow', ['TensorFlow','Tensorflow']],
       ['Hugging Face', ['HuggingFace','Transformers']],
-      ['PyTorch Lightning', ['PyTorchLightning','Lightning']],
+      ['PyTorch Lightning', ['PyTorch-Dark','PyTorch-Light']],
       ['OpenCV', ['OpenCV']],
       ['Scikit-learn', ['Scikit-learn','Sklearn','Python']],
       ['DeepSpeed', ['DeepSpeed']],
@@ -251,9 +252,9 @@ class PortfolioApp {
       ['Linux', ['Linux','Arch-Dark','Arch-Light','Debian-Dark','Debian-Light']],
       ['NumPy', ['NumPy','Numpy']],
       ['Pandas', ['Pandas']],
-      ['llama.cpp', ['LlamaCPP','Llama']],
       ['Streamlit', ['Streamlit']],
       ['Wandb', ['Wandb','WeightsBiases']],
+      ['Notion', ['Notion-Dark','Notion-Light']],
       
       // Additional project technologies
       ['Phi-2', ['Phi','Microsoft']],
@@ -342,6 +343,55 @@ class PortfolioApp {
         tryLoad(item, files);
       }
     });
+  }
+
+  /* Typewriter headline */
+  initTypewriter() {
+    const el = document.getElementById('typewriter');
+    if (!el) return;
+
+    const phrases = [
+      'Hey there!',
+      'I am Simran!',
+      'A machine learning researcher passionate about building real-world applications.'
+    ];
+
+    const typingDelayMs = 30;
+    const eraseDelayMs = 40;
+    const holdAfterTypeMs = 1400;
+    const holdAfterEraseMs = 400;
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const tick = () => {
+      const current = phrases[phraseIndex];
+      if (!isDeleting) {
+        // typing
+        charIndex = Math.min(charIndex + 1, current.length);
+        el.textContent = current.slice(0, charIndex);
+        if (charIndex === current.length) {
+          setTimeout(() => { isDeleting = true; requestAnimationFrame(tick); }, holdAfterTypeMs);
+          return;
+        }
+        setTimeout(() => requestAnimationFrame(tick), typingDelayMs);
+      } else {
+        // deleting
+        charIndex = Math.max(charIndex - 1, 0);
+        el.textContent = current.slice(0, charIndex);
+        if (charIndex === 0) {
+          phraseIndex = (phraseIndex + 1) % phrases.length;
+          isDeleting = false;
+          setTimeout(() => requestAnimationFrame(tick), holdAfterEraseMs);
+          return;
+        }
+        setTimeout(() => requestAnimationFrame(tick), eraseDelayMs);
+      }
+    };
+
+    // Start after initial reveal animation
+    setTimeout(() => requestAnimationFrame(tick), 700);
   }
 }
 
